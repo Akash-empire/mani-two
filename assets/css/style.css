@@ -5631,7 +5631,7 @@ footer.clean-footer.crev:before {
 }
 
 .main-header .lg-text h1 {
-  text-transform: uppercase;
+  text-transform: None;
   font-size: 9vw;
   line-height: 1;
 }
@@ -10222,6 +10222,18 @@ footer.clean-footer.crev:before {
     left: 5vw !important;
     top: 5vh !important;
   }
+}
+
+@font-face {
+  font-family: "Californian Signature";
+  src: url("../fonts/CalifornianSignature.otf");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.fsn {
+  font-family: "californian Signature";
 }
 
 /* ====================== [ End Responsive ] ====================== */
