@@ -506,84 +506,88 @@
 
                 <!-- ==================== Start Portfolio ==================== -->
 
+                <style>
+                    .skelt-collage {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-auto-rows: 280px;
+                        grid-auto-flow: dense;
+                        gap: 16px;
+                    }
+
+                    .skelt-collage .item {
+                        margin: 0;
+                        overflow: hidden;
+                    }
+
+                    .skelt-collage .item.feature {
+                        grid-column: span 2;
+                        grid-row: span 2;
+                    }
+
+                    .skelt-collage a,
+                    .skelt-collage img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .skelt-collage img {
+                        object-fit: cover;
+                    }
+
+                    @media (max-width: 991px) {
+                        .skelt-collage {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+
+                    @media (max-width: 575px) {
+                        .skelt-collage {
+                            grid-template-columns: 1fr;
+                        }
+
+                        .skelt-collage .item.feature {
+                            grid-column: auto;
+                            grid-row: auto;
+                        }
+                    }
+                </style>
+
                 <section class="work-stand section-padding sub-bg">
                     <div class="container-xxl">
 
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-02.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-02.jpg" alt="Skelt Beauty work 02"></a>
-                                    </div>
-                                </div>
+                        <div class="skelt-collage">
+                            <div class="item feature">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-11.jpg" alt="Skelt Beauty work 11">
                             </div>
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-03.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-03.jpg" alt="Skelt Beauty work 03"></a>
-                                    </div>
-                                </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-02.jpg" alt="Skelt Beauty 02">
                             </div>
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-04.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-04.jpg" alt="Skelt Beauty work 04"></a>
-                                    </div>
-                                </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-03.jpg" alt="Skelt Beauty 03">
                             </div>
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-05.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-05.jpg" alt="Skelt Beauty work 05"></a>
-                                    </div>
-                                </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-04.jpg" alt="Skelt Beauty 04">
                             </div>
-                           
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-07.webp" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-07.webp" alt="Skelt Beauty work 07"></a>
-                                    </div>
-                                </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-05.jpg" alt="Skelt Beauty 05">
                             </div>
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-08.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-08.jpg" alt="Skelt Beauty work 08"></a>
-                                    </div>
-                                </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-07.webp" alt="Skelt Beauty 07">
+                            </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-08.jpg" alt="Skelt Beauty 08">
+                            </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-09.jpg" alt="Skelt Beauty 09">
+                            </div>
+                            <div class="item">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-12.jpg" alt="Skelt Beauty 12">
                             </div>
                            
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-09.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-09.jpg" alt="Skelt Beauty work 09"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-11.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-11.jpg" alt="Skelt Beauty work 11"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-12.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-12.jpg" alt="Skelt Beauty work 12"></a>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="col-lg-4 col-md-6 items beauty">
-                                <div class="item mt-40">
-                                    <div class="img">
-                                        <a href="assets/imgs/portfolio/skelt-beauty/work-10.jpg" target="_blank"><img src="assets/imgs/portfolio/skelt-beauty/work-10.jpg" alt="Skelt Beauty work 10"></a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+
                     </div>
                 </section>
 
