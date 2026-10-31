@@ -508,30 +508,48 @@
 
                 <style>
                     .balvene-collage {
-                        column-count: 3;
-                        column-gap: 20px;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-auto-rows: 280px;
+                        grid-auto-flow: dense;
+                        gap: 16px;
                     }
 
                     .balvene-collage .item {
-                        break-inside: avoid;
-                        margin: 0 0 20px;
+                        margin: 0;
+                        overflow: hidden;
                     }
 
+                    .balvene-collage .item.feature {
+                        grid-column: span 2;
+                        grid-row: span 2;
+                    }
+
+                    .balvene-collage a,
                     .balvene-collage img {
                         display: block;
                         width: 100%;
-                        height: auto;
+                        height: 100%;
+                    }
+
+                    .balvene-collage img {
+                        object-fit: cover;
                     }
 
                     @media (max-width: 991px) {
                         .balvene-collage {
-                            column-count: 2;
+                            grid-template-columns: repeat(2, 1fr);
                         }
                     }
 
                     @media (max-width: 575px) {
                         .balvene-collage {
-                            column-count: 1;
+                            grid-template-columns: 1fr;
+                        }
+
+                        .balvene-collage .item.feature {
+                            grid-column: auto;
+                            grid-row: auto;
                         }
                     }
                 </style>
@@ -540,8 +558,8 @@
                     <div class="container-xxl">
 
                         <div class="balvene-collage">
-                            <div class="item">
-                                <img src="assets/imgs/portfolio/the-balvene-doublewood/work-01-new.webp" alt="The Balvene Doublewood work 01">
+                            <div class="item feature">
+                                <img src="assets/imgs/portfolio/the-balvene-doublewood/banner.jpg" alt="The Balvene Doublewood banner">
                             </div>
                             <div class="item">
                                 <img src="assets/imgs/portfolio/the-balvene-doublewood/work-02.jpg" alt="The Balvene Doublewood work 02">
@@ -569,9 +587,6 @@
                             </div>
                             <div class="item">
                                 <img src="assets/imgs/portfolio/the-balvene-doublewood/work-10.jpg" alt="The Balvene Doublewood work 10">
-                            </div>
-                            <div class="item">
-                                <img src="assets/imgs/portfolio/the-balvene-doublewood/banner.jpg" alt="The Balvene Doublewood banner">
                             </div>
                         </div>
 
