@@ -542,7 +542,13 @@
                         height: 100%;
                     }
 
+                    /* Show every tile image in full; the empty space this leaves is only the tile background. */
                     .balvene-collage img {
+                        object-fit: contain;
+                    }
+
+                    /* The first (banner) image keeps its original cropped look. */
+                    .balvene-collage .item.feature img {
                         object-fit: cover;
                     }
 
