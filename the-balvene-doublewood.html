@@ -528,6 +528,11 @@
                         height: auto;
                     }
 
+                    /* Large image that sits alone on its own full-width row. */
+                    .balvene-collage img.full-row {
+                        flex-basis: 100%;
+                    }
+
                     /* The banner keeps its original look: two-thirds of the row, 576px tall, cropped to fill. */
                     .balvene-collage .item.feature img {
                         flex: 0 0 calc(66.666% - 8px);
@@ -535,12 +540,20 @@
                         object-fit: cover;
                     }
 
+                    /* work-02 sits beside the banner: same height, with its right edge trimmed. */
+                    .balvene-collage img[src$="work-02.jpg"] {
+                        height: 576px;
+                        object-fit: cover;
+                        object-position: left center;
+                    }
+
                     @media (max-width: 767px) {
                         .balvene-collage img {
                             flex: 1 1 100%;
                         }
 
-                        .balvene-collage .item.feature img {
+                        .balvene-collage .item.feature img,
+                        .balvene-collage img[src$="work-02.jpg"] {
                             height: 280px;
                         }
                     }
@@ -566,7 +579,7 @@
                                 <img src="assets/imgs/portfolio/the-balvene-doublewood/work-05.jpg" alt="The Balvene Doublewood work 05" style="--r: 0.691">
                             </div>
                             <div class="item">
-                                <img src="assets/imgs/portfolio/the-balvene-doublewood/work-06.jpg" alt="The Balvene Doublewood work 06" style="--r: 1.541">
+                                <img src="assets/imgs/portfolio/the-balvene-doublewood/work-06.jpg" alt="The Balvene Doublewood work 06" class="full-row" style="--r: 1.541">
                             </div>
                             <div class="item">
                                 <img src="assets/imgs/portfolio/the-balvene-doublewood/work-07.jpg" alt="The Balvene Doublewood work 07" style="--r: 0.714">
