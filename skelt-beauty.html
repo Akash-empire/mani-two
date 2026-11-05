@@ -507,50 +507,72 @@
                 <!-- ==================== Start Portfolio ==================== -->
 
                 <style>
+                    /* ── Skelt Beauty Collage ─────────────────────────────────
+                       4-column CSS grid. Each .item spans 1–4 columns.
+                       Images use width:100% + height:auto → NO crop, NO stretch.
+                       Exception: .item-fill stretches to fill the row height
+                       and crops the image left & right (object-fit:cover).
+                    ────────────────────────────────────────────────────────── */
                     .skelt-collage {
                         display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        grid-auto-rows: 280px;
-                        grid-auto-flow: dense;
-                        gap: 16px;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 12px;
+                        align-items: start;   /* prevents vertical stretching */
                     }
 
                     .skelt-collage .item {
-                        margin: 0;
                         overflow: hidden;
                     }
 
-                    .skelt-collage .item.feature {
-                        grid-column: span 2;
-                        grid-row: span 2;
-                    }
-
-                    .skelt-collage a,
                     .skelt-collage img {
                         display: block;
                         width: 100%;
+                        height: auto;         /* natural ratio — no crop, no stretch */
+                        transition: transform 0.4s ease;
+                    }
+
+                    .skelt-collage .item:hover img {
+                        transform: scale(1.03);
+                    }
+
+                    /* Column span helpers */
+                    .skelt-collage .span-1 { grid-column: span 1; }
+                    .skelt-collage .span-2 { grid-column: span 2; }
+                    .skelt-collage .span-3 { grid-column: span 3; }
+                    .skelt-collage .span-4 { grid-column: span 4; }
+
+                    /* Fill the full row height, crop image left & right */
+                    .skelt-collage .item-fill {
+                        align-self: stretch;
+                    }
+                    .skelt-collage .item-fill img {
                         height: 100%;
+                        object-fit: cover;        /* crops left & right to fill the tall column */
+                        object-position: center;
                     }
 
-                    .skelt-collage img {
-                        object-fit: cover;
-                    }
-
+                    /* Tablet: 2-column */
                     @media (max-width: 991px) {
                         .skelt-collage {
                             grid-template-columns: repeat(2, 1fr);
                         }
+                        .skelt-collage .span-3,
+                        .skelt-collage .span-4 { grid-column: span 2; }
+                        .skelt-collage .item-fill img {
+                            height: auto;
+                            object-fit: unset;
+                        }
                     }
 
+                    /* Mobile: 1-column */
                     @media (max-width: 575px) {
                         .skelt-collage {
                             grid-template-columns: 1fr;
                         }
-
-                        .skelt-collage .item.feature {
-                            grid-column: auto;
-                            grid-row: auto;
-                        }
+                        .skelt-collage .span-1,
+                        .skelt-collage .span-2,
+                        .skelt-collage .span-3,
+                        .skelt-collage .span-4 { grid-column: span 1; }
                     }
                 </style>
 
@@ -558,34 +580,43 @@
                     <div class="container-xxl">
 
                         <div class="skelt-collage">
-                            <div class="item feature">
-                                <img src="assets/imgs/portfolio/skelt-beauty/work-11.jpg" alt="Skelt Beauty work 11">
+
+                            <!-- Row 1: 3 + 1  (4 cols total) -->
+                            <div class="item span-3">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-11.jpg" alt="Skelt Beauty 11">
                             </div>
-                            <div class="item">
+                            <!-- span-1 fills the full row height; image is cropped left & right -->
+                            <div class="item span-1 item-fill">
                                 <img src="assets/imgs/portfolio/skelt-beauty/work-02.jpg" alt="Skelt Beauty 02">
                             </div>
-                            <div class="item">
+
+                            <!-- Row 2: 4 images × 1 col each -->
+                            <div class="item span-1">
                                 <img src="assets/imgs/portfolio/skelt-beauty/work-03.jpg" alt="Skelt Beauty 03">
                             </div>
-                            <div class="item">
+                            <div class="item span-1">
                                 <img src="assets/imgs/portfolio/skelt-beauty/work-04.jpg" alt="Skelt Beauty 04">
                             </div>
-                            <div class="item">
+                            <div class="item span-1">
                                 <img src="assets/imgs/portfolio/skelt-beauty/work-05.jpg" alt="Skelt Beauty 05">
                             </div>
-                            <div class="item">
-                                <img src="assets/imgs/portfolio/skelt-beauty/work-07.webp" alt="Skelt Beauty 07">
-                            </div>
-                            <div class="item">
+                            <div class="item span-1">
                                 <img src="assets/imgs/portfolio/skelt-beauty/work-08.jpg" alt="Skelt Beauty 08">
                             </div>
-                            <div class="item">
+
+                            <!-- Row 3: 2 images × 2 cols each -->
+                            <div class="item span-2">
                                 <img src="assets/imgs/portfolio/skelt-beauty/work-09.jpg" alt="Skelt Beauty 09">
                             </div>
-                            <div class="item">
+                            <div class="item span-2">
                                 <img src="assets/imgs/portfolio/skelt-beauty/work-12.jpg" alt="Skelt Beauty 12">
                             </div>
-                           
+
+                            <!-- Row 4: 1 full-width image -->
+                            <div class="item span-4">
+                                <img src="assets/imgs/portfolio/skelt-beauty/work-07.webp" alt="Skelt Beauty 07">
+                            </div>
+
                         </div>
 
                     </div>
